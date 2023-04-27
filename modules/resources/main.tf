@@ -2,7 +2,7 @@ data "aws_region" "current" {}
 
 locals {
   prom_svc    = "prometheus-server.${var.k8s_namespace}.svc.cluster.local"
-  loki_svc    = var.loki_mode == "distributed" ? "loki-distributed-gateway.${var.k8s_namespace}.svc.cluster.local" : "loki.${var.k8s_namespace}.svc.cluster.local:3100"
+  loki_svc    = var.loki_mode == "distributed" ? "loki-loki-distributed-gateway.${var.k8s_namespace}.svc.cluster.local" : "loki-loki.${var.k8s_namespace}.svc.cluster.local:3100"
   grafana_svc = "grafana.${var.k8s_namespace}.svc.cluster.local"
 }
 
