@@ -30,15 +30,6 @@ resource "aws_s3_bucket" "this" {
   force_destroy = var.s3_force_destroy
 }
 
-resource "aws_s3_bucket_acl" "this" {
-  bucket = aws_s3_bucket.this.id
-  acl    = "private"
-
-  depends_on = [
-    aws_s3_bucket.this
-  ]
-}
-
 resource "aws_s3_bucket_public_access_block" "this" {
   bucket                  = aws_s3_bucket.this.id
   block_public_acls       = true
