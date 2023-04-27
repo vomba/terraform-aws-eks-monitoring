@@ -51,6 +51,8 @@ loki:
       chunk_encoding: snappy
       chunk_retain_period: 1m
       max_transfer_retries: 0
+      wal:
+        dir: "/tmp/wal"
       lifecycler:
         join_after: 0s
         ring:
